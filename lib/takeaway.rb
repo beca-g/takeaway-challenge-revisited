@@ -3,7 +3,7 @@ class Takeaway
 
   def initialize(menu, order)
     @menu = menu
-    @order = order || Order.new
+    @order = order || Order.new(menu)
   end
 
   def view_menu

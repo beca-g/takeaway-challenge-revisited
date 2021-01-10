@@ -1,7 +1,7 @@
 describe "User Stories" do
   let(:dishes) { { Pizza: 10.00, Carbonara: 15.00, Risotto: 12.00 } }
   let(:menu) { Menu.new(dishes) }
-  let(:order) { Order.new }
+  let(:order) { Order.new(menu) }
   let(:takeaway) { Takeaway.new(menu, order) }
 
   # As a customer
