@@ -58,3 +58,5 @@ I would like to receive a text such as "Thank you! Your order was placed and wil
 | Menu     | - @dishes                     | - print<br>- has_dish<br>- price(dish)                             |
 | Order    | - @menu<br>- @dishes = { }                | - add(dish, quantity)<br>- delete(dish)<br>- view_order<br>- total |
 | SMS      |                               | - delivery_message<br>- delivery_time                              |
+
+![Imgur](https://imgur.com/AJ77ZgW.png)
