@@ -22,4 +22,16 @@ describe Menu do
       expect(menu.view).to eq printed_menu
     end
   end
+
+  describe "#has_dish?" do
+    it "checks if a dish is not on the menu" do
+      expect(menu.has_dish?(:Pasta)).to be false
+    end
+
+    it "checks if a dish is on the menu" do
+      expect(menu.has_dish?(:Pizza)).to be true
+    end
+  end
 end
+
+# to do - add test for has_dish? to increase test coverage
