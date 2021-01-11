@@ -16,5 +16,6 @@ class Takeaway
     dishes.map { |dish, quantity|
       order.add(dish, quantity)
     }
+    order.total
   end
 end

@@ -32,6 +32,10 @@ describe Menu do
       expect(menu.has_dish?(:Pizza)).to be true
     end
   end
-end
 
-# to do - add test for has_dish? to increase test coverage
+  describe "#price" do
+    it "checks the price of a dish" do
+      expect(menu.price(:Pizza)).to eq dishes[:Pizza]
+    end
+  end
+end

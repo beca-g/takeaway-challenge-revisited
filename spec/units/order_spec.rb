@@ -2,7 +2,7 @@ require "order"
 
 describe Order do
   subject(:order) { described_class.new(menu) }
-  let(:menu) { double :menu }
+  let(:menu) { instance_double "Menu" }
   let(:dishes) do 
     {
       Pizza: 2,
@@ -10,20 +10,34 @@ describe Order do
       Risotto: 1
     }
   end
+  
+  context "items are included on the menu" do
+    before do
+      allow(menu).to receive(:has_dish?).with(:Pizza).and_return true
+      allow(menu).to receive(:has_dish?).with(:Carbonara).and_return true
+      allow(menu).to receive(:has_dish?).with(:Risotto).and_return true
 
-  describe "#add" do
-    context "items are included on the menu" do
-      before do
-        allow(menu).to receive(:has_dish?).with(:Pizza).and_return true
-        allow(menu).to receive(:has_dish?).with(:Carbonara).and_return true
-        allow(menu).to receive(:has_dish?).with(:Risotto).and_return true
-      end
-
+      allow(menu).to receive(:price).with(:Pizza).and_return(10.00)
+      allow(menu).to receive(:price).with(:Carbonara).and_return(15.00)
+      allow(menu).to receive(:price).with(:Risotto).and_return(12.00)
+    end
+    
+    describe "#add" do
       it "selects a number of dishes from the menu" do
         order.add(:Pizza, 2)
         order.add(:Carbonara, 1)
         order.add(:Risotto, 1)
         expect(order.dishes).to eq dishes
+      end
+    end
+
+    describe "#total" do
+      it "calculates order total" do
+        order.add(:Pizza, 1)
+        order.add(:Carbonara, 1)
+        order.add(:Risotto, 1)
+        total = 37.00
+        expect(order.total).to eq total
       end
     end
   end

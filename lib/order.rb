@@ -11,4 +11,16 @@ class Order
 
     dishes[dish] = quantity
   end
+
+  def total
+    items_total.sum
+  end
+
+  private
+
+  def items_total
+    dishes.map { |dish, quantity|
+      menu.price(dish) * quantity
+    }
+  end
 end

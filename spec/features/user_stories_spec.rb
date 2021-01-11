@@ -19,4 +19,13 @@ describe "User Stories" do
     new_order = { Pizza: 2, Carbonara: 1, Risotto: 1 }
     takeaway.place_order(new_order)
   end
+
+  # As a customer
+  # So that I can verify that my order is correct
+  # I would like to check that the total I have been given matches the sum of the various dishes in my order
+  it "checks the total of the order" do
+    new_order = { Pizza: 2, Carbonara: 1, Risotto: 1 }
+    total = takeaway.place_order(new_order)
+    expect(total).to eq 47.00
+  end
 end

@@ -14,4 +14,8 @@ class Menu
   def has_dish?(dish)
     dishes.include?(dish)
   end
+
+  def price(dish)
+    dishes[dish]
+  end
 end
