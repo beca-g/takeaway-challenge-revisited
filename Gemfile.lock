@@ -67,7 +67,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv (~> 2.7, >= 2.7.6)
+  dotenv
   rspec
   rubocop (= 0.79.0)
   simplecov
