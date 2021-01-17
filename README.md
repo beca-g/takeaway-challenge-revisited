@@ -89,3 +89,11 @@ I had a test-driven and OOP approach to this challenge, firstly carrying out a p
  
 ## Test Coverage
 ![Imgur](https://imgur.com/WqBE0Il.png)
+
+## Tech
+
+- ruby 2.7.0
+- rspec
+- rubocop
+- simple-cov
+- twilio-ruby
